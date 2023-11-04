@@ -1,8 +1,15 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/my_bank_db
-    username: postgres
-    password: postgres
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        default_schema: my_bank_db
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/my_bank_db"
+    username: postgres
+    password: postgres
+
+server:
+  port: 8282

@@ -1,8 +1,14 @@
 package com.example.demo.model;
 
 import jakarta.persistence.*;
+import lombok.Builder;
+import lombok.Data;
+
+import java.util.List;
 
 @Entity
+@Builder
+@Data
 @Table(name = "account")
 public class Account {
     @Id
@@ -11,6 +17,10 @@ public class Account {
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
-    @Column(name = "type")
-    private Enum type;
+    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
+    private List<AccountType> accountTypes;
+    @Column(name = "currency")
+    private Enum currency;
+    @Column(name = "balance")
+    private double balance;
 }

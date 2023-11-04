@@ -1,23 +1,18 @@
 package com.example.demo.model;
 
 import jakarta.persistence.*;
-import lombok.Builder;
 import lombok.Data;
 
 @Entity
-@Builder
 @Data
-@Table(name = "card")
-public class Card {
+@Table(name = "account_type")
+public class AccountType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
-    @JoinColumn(name = "customer_id")
-    private Customer customer;
-    @ManyToOne
     @JoinColumn(name = "account_id")
     private Account account;
-    @Column(name = "card_type")
-    private Enum cardType;
+    @Column(name = "type_name")
+    private Enum typeName;
 }
