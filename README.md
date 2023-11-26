@@ -5,7 +5,7 @@
 - Hesap yönetimi
 - Kart yönetimi
 - Transfer yönetimi
-- Müşteri yönetimi
+## Müşteri yönetimi
 Yaratılacak API'lar aracılığıyla; müşteri yaratma, güncelleme ve silme işlemleri mümkün olacaktır.
 Silme işlemi hesaplarında parası bulunan yada kredi kartı borcu bulunan müşteriler için mümkün olmayacak.
 
